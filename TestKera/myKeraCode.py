@@ -16,3 +16,9 @@ print type(dataset) # numpy.ndarray
 #print X
 #print "Y = "
 #print Y
+
+# Create network model
+model = Sequential()
+model.add(Dense(12, input_dim = 8, init = 'uniform', activation = 'relu'))
+model.add(Dense(8, init = 'uniform', activation = 'relu'))
+model.add(Dens(1, init = 'uniform', activation = 'sigmoid'))
