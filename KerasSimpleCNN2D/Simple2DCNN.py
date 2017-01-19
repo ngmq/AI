@@ -1,4 +1,4 @@
-# Simple 2D CNN on MINST dataset by Keras
+# Simple 2D CNN on MNIST dataset by Keras
 # Based on examples at https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py
 # More examples at https://github.com/fchollet/keras/tree/master/examples
 
