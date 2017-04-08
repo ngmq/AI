@@ -3,6 +3,10 @@ Contest data: https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings
 (http://brettromero.com) Full tutorials:
 Part 1: http://brettromero.com/wordpress/data-science-a-kaggle-walkthrough-introduction/
 Part 2: http://brettromero.com/wordpress/data-science-a-kaggle-walkthrough-understanding-the-data/
+Part 3: http://brettromero.com/wordpress/data-science-kaggle-walkthrough-cleaning-data/
+Part 4: http://brettromero.com/wordpress/data-science-kaggle-walkthrough-data-transformation-feature-extraction/
+Part 5: http://brettromero.com/wordpress/data-science-kaggle-walkthrough-adding-new-data/
+Part 6: http://brettromero.com/wordpress/data-science-kaggle-walkthrough-creating-model/
 
 Kdnuggets Tutorials (shortened)
 Part 1: http://www.kdnuggets.com/2016/05/doing-data-science-kaggle-walkthrough-intro.html
