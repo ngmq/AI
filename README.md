@@ -6,6 +6,4 @@ http://machinelearningmastery.com/
 
 Vợ òn
 
-Vợ gấu òn
-
-Vợ òn
+Vợ òn xinh
