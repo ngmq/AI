@@ -1,2 +1,5 @@
-train_users_2.csv
+*.csv
 *.zip
+*.jpg
+*.pkl
+*.tsv
