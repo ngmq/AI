@@ -1,0 +1,14 @@
+testid = 9, prob = [ 0.73325658], ans = 0
+testid = 12, prob = [ 0.56399173], ans = 0
+testid = 107, prob = [ 0.86600953], ans = 0
+testid = 111, prob = [ 0.96719569], ans = 0
+testid = 138, prob = [ 0.36362675], ans = 1
+testid = 195, prob = [ 0.65820569], ans = 0
+testid = 349, prob = [ 0.94120193], ans = 0
+testid = 402, prob = [ 0.02179916], ans = 1
+testid = 403, prob = [ 0.10847748], ans = 1
+testid = 404, prob = [ 0.00345198], ans = 1
+testid = 447, prob = [ 0.60001445], ans = 0
+testid = 527, prob = [ 0.99236953], ans = 0
+count = 548
+in percent = 0.978571428571

@@ -18,38 +18,57 @@ Y_test = list()
 last_id = 0
 
 print("Extracting train and test set...")
-for i, img in enumerate(X):
-    # print i, Y[i], img.shape
-    if(Y[i] == 0):
-        if(n_female < train_size):
-            X_train.append(img)
-            Y_train.append(Y[i])
-        else:
-            X_test.append(img)
-            Y_test.append(Y[i])
-        n_female += 1
-    else:
-        if(n_male < train_size):
-            X_train.append(img)
-            Y_train.append(Y[i])
-        else:
-            X_test.append(img)
-            Y_test.append(Y[i])
-        n_male += 1
+count = 0
+toTrain = 0
+toTest = 0
 
-X_train = np.array(X_train)       
-Y_train = np.array(Y_train)
-X_test = np.array(X_test)
-Y_test = np.array(Y_test)
+testid = [9, 12, 107, 111, 138, 195, 349, 402, 403, 404, 447, 527]
+
+for i, img in enumerate(X):
+    # print Y[i]
+    # if(Y[i] == 0):
+        # if(n_female < train_size):
+            # X_train.append(img)
+            # Y_train.append(Y[i])
+        # else:
+            # X_test.append(img)
+            # Y_test.append(Y[i])
+        # n_female += 1
+    # else:
+        # if(n_male < train_size):
+            # X_train.append(img)
+            # Y_train.append(Y[i])
+        # else:
+            # X_test.append(img)
+            # Y_test.append(Y[i])
+        # n_male += 1
+    if(count < 9):
+        X_train.append(img)
+        Y_train.append(Y[i])
+        toTrain += 1
+    else:
+        X_test.append(img)
+        Y_test.append(Y[i])
+        toTest += 1
+    count += 1
+    count = count % 14
+    
+print(toTrain)
+print(toTest)
+
+# X_train = np.array(X_train)       
+# Y_train = np.array(Y_train)
+# X_test = np.array(X_test)
+# Y_test = np.array(Y_test)
  
-with open('X_train_80.pkl', 'wb') as f:
-    pickle.dump(X_train, f)
+# with open('x_train_80.pkl', 'wb') as f:
+    # pickle.dump(X_train, f)
     
-with open('Y_train_80.pkl', 'wb') as f:
-    pickle.dump(Y_train, f)
+# with open('y_train_80.pkl', 'wb') as f:
+    # pickle.dump(Y_train, f)
     
-with open('X_test_80.pkl', 'wb') as f:
-    pickle.dump(X_test, f)
+# with open('x_test_80.pkl', 'wb') as f:
+    # pickle.dump(X_test, f)
     
-with open('Y_test_80.pkl', 'wb') as f:
-    pickle.dump(Y_test, f)
+# with open('y_test_80.pkl', 'wb') as f:
+    # pickle.dump(Y_test, f)

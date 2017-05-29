@@ -5,7 +5,6 @@ from glob import glob
 from tqdm import tqdm
 from scipy import misc
 
-
 labels = dict()
 
 with open('all_gender.txt') as f:

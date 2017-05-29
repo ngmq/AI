@@ -26,32 +26,32 @@ model.add(Conv2D(64, (3,3), input_shape = input_shape, name='block1_conv1'))
 model.add(Activation("relu"))
 model.add(Conv2D(64, (3,3), name='block1_conv2'))
 model.add(Activation("relu"))
-model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2), name='block1_pool1'))
+model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
 # Block 2
-model.add(Conv2D(128, (3,3), name='block2_conv1'))
+model.add(Conv2D(128, (3,3)))
 model.add(Activation("relu"))
-model.add(Conv2D(128, (3,3), name='block2_conv2'))
+model.add(Conv2D(128, (3,3)))
 model.add(Activation("relu"))
-model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2), name='block2_pool1'))
+model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
 # Block 3
-model.add(Conv2D(256, (3,3), name='block3_conv1'))
+model.add(Conv2D(256, (3,3)))
 model.add(Activation("relu"))
-model.add(Conv2D(256, (3,3), name='block3_conv2'))
+model.add(Conv2D(256, (3,3)))
 model.add(Activation("relu"))
-model.add(Conv2D(256, (3,3), name='block3_conv3'))
+model.add(Conv2D(256, (3,3)))
 model.add(Activation("relu"))
-model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2), name='block3_pool1'))
+model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
 # Block 4
-model.add(Conv2D(512, (3,3), name='block4_conv1'))
+model.add(Conv2D(512, (3,3)))
 model.add(Activation("relu"))
-model.add(Conv2D(512, (3,3), name='block4_conv2'))
+model.add(Conv2D(512, (3,3)))
 model.add(Activation("relu"))
-model.add(Conv2D(512, (3,3), name='block4_conv3'))
+model.add(Conv2D(512, (3,3)))
 model.add(Activation("relu"))
-model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2), name='block4_pool1'))
+model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
 # Flatten
 model.add(Flatten())
@@ -61,7 +61,7 @@ model.add(Dense(1024))
 model.add(LeakyReLU(0.3))
 model.add(Dense(1, activation='sigmoid'))
 
-sgd = optimizers.SGD(lr=0.00001, decay=1e-6, momentum=0.9, nesterov=True)
+sgd = optimizers.SGD(lr=0.000001, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(optimizer = sgd, loss='binary_crossentropy', metrics=['accuracy'])
 model.summary()
 
@@ -77,19 +77,8 @@ with open('x_test_95.pkl', 'rb') as f:
 with open('y_test_95.pkl', 'rb') as f:
     y_test = pickle.load(f)
     
-x_train_max = np.max(x_train)
-x_test_max = np.max(x_test)
-x_max = max(x_train_max, x_test_max)
-
-x_train_min = np.min(x_train)
-x_test_min = np.min(x_test)
-x_min = min(x_train_min, x_test_min)
-
-x_train = (x_train - x_min + 0.0) / (0.0 + x_max - x_min)
-x_test = (x_test - x_min + 0.0) / (0.0 + x_max - x_min)
-    
-history = model.fit(x_train, y_train, batch_size=64, epochs = 1000, validation_data = (x_test, y_test))
-score = model.evaluate(x_test, y_test, batch_size=64)
+history = model.fit(x_train, y_train, batch_size=40, epochs = 40, validation_data = (x_test, y_test))
+score = model.evaluate(x_test, y_test, batch_size=40)
 print(score)
 
 # summarize history for accuracy

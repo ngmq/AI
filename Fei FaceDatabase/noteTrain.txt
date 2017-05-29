@@ -1,0 +1,7 @@
+normal initialization, optimizer = sgd, lr = 0.0001, train size = 80:
+
+after 35 epoch, model dat 93% validation acc va 99.69% train acc
+sau 60 epoch: overfit, train acc = 100%, validation acc = 92
+
+normal initialization, optimizer = sgd, lr = 0.0003, train size = 80:
+sau khoang 107 epoch, model dat 90% validation acc
