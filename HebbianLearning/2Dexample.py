@@ -28,7 +28,7 @@ w = w / (nw + 1e-15)
 lr = 0.001
 niter = 6905
 
-sumy = []
+all_var = []
 last_var = 0 ## Variable to check if variance is increasing
 
 for iter in range(niter):
@@ -44,18 +44,21 @@ for iter in range(niter):
     
     y2 = np.dot(X, w)
     var = np.sum(y2**2) / n
-    sumy.append(var)
+    all_var.append(var)
     if(var < last_var):
         print(iter, "WEIRD!") # For mistake 2. Now I realized the whole thing is just gradient descent
     last_var = var
     
-print(np.sum(y2**2) / n)
+print("Final weight = ", w)
+print(var)
+
+""" Compare the variance on W to the variance explained by the first component in PCA """
 pca = PCA(n_components=1)
 pca.fit(X)
 print(pca.explained_variance_[0])
 
 
-plt.plot(range(niter), sumy, 'b-')
+plt.plot(range(niter), all_var, 'b-')
 plt.show()
 
 # plt.plot(x1, x2, 'ro')
